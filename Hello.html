@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>レスポンシブデザインの練習</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    /* ナビゲーション */
+    .nav {
+      display: flex;
+      gap: 16px;
+      background-color: #333;
+      padding: 12px;
+      border-radius: 8px;
+    }
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* カードレイアウト */
+    .cards {
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .card {
+      flex: 1;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background-color: #fff;
+    }
+
+    /* タブレット以下: 縦並びに切り替え */
+    @media (max-width: 768px) {
+      .nav {
+        flex-direction: column;
+        text-align: center;
+      }
+      .cards {
+        flex-direction: column;
+      }
+    }
+
+    /* スマホ: 文字サイズ調整 */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="#">ホーム</a>
+    <a href="#">サービス</a>
+    <a href="#">お問い合わせ</a>
+  </nav>
+
+  <div class="cards">
+    <div class="card">
+      <h3>カード1</h3>
+      <p>PCでは横並び、スマホでは縦並びになります。</p>
+    </div>
+    <div class="card">
+      <h3>カード2</h3>
+      <p>ブラウザの幅を狭めて確認してみましょう。</p>
+    </div>
+    <div class="card">
+      <h3>カード3</h3>
+      <p>メディアクエリでレイアウトが切り替わります。</p>
+    </div>
+  </div>
+</body>
+</html>
