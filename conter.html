@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport", content="width=device-width", initial-scale="1.0">
+    <title>カウンター</title>
+    <style>
+        body{
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #result {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        #plus {
+            color: aliceblue;
+            background-color: green;
+        }
+        #plus:hover {
+            background-color: greenyellow;
+        }
+
+        #minus {
+            color: aliceblue;
+            background-color: red;
+        }
+
+        #minus:hover {
+            background-color: brown;
+        }
+
+        #reset {
+            color: aliceblue;
+            background-color: blue;
+        }
+
+        #reset:hover {
+            background-color: aqua;
+        }
+
+        #body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>カウンター</h1>
+    <p id="result">0</p>
+    <div class="buttons">
+        <button id="plus">+</button>
+        <button id="minus">-</button>
+    </div>
+    
+    <button id="reset">リセット</button>
+
+    <script>
+        const result = document.querySelector("#result");
+        const plus = document.querySelector("#plus");
+        const minus = document.querySelector("#minus");
+        const reset = document.querySelector('#reset');
+
+        let count = 0;
+
+        plus.addEventListener('click', function() {
+            count++;
+            result.textContent = count;
+        });
+
+        minus.addEventListener('click', function() {
+            count--;
+            result.textContent = count;
+        });
+
+        reset.addEventListener('click', function() {
+            count = 0;
+            result.textContent = count;
+        });
+    </script>
+</body>
+</html>
